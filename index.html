@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Body of Christ Intl</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="theme-color" content="#ff0000"/>
+
+</head>
+
+<body>
+
+<header>
+  <h1> Body of Christ Intl</h1>
+  <p>Watchmen Kyrie Ministry</p>
+</header>
+
+<nav>
+  <button onclick="showPage('home')">Home</button>
+  <button onclick="showPage('sermons')">Sermons</button>
+  <button onclick="showPage('prayer')">Prayer</button>
+  <button onclick="showPage('donate')">Donate</button>
+</nav>
+
+<main>
+
+  <!-- HOME -->
+  <section id="home" class="page active">
+    <h2>Welcome</h2>
+    <a class="btn" href="https://chat.whatsapp.com/B9abBP5EJYS7Sx8vsQ55gr">
+      JOIN LIVE 🔴
+    </a>
+  </section>
+
+  <!-- SERMONS -->
+  <section id="sermons" class="page">
+    <h2>Sermons</h2>
+
+    <div class="card">
+      <h3>Speak To The Situation</h3>
+      <p>Watchman Kyrie</p>
+    </div>
+
+    <div class="card">
+      <h3>The Ancient Path</h3>
+      <p>Teaching Series</p>
+    </div>
+  </section>
+
+  <!-- PRAYER -->
+  <section id="prayer" class="page">
+    <h2>Prayer Requests</h2>
+    <a class="btn" href="https://wa.me/26774660416">
+      Send Prayer Request
+    </a>
+  </section>
+
+  <!-- DONATE -->
+  <section id="donate" class="page">
+    <h2>Support Ministry</h2>
+    <div class="card">
+      <p>Mobile Money / Donations:</p>
+      <h3>+267 74660416</h3>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Body of Christ Intl © 2026
+</footer>
+
+<script>
+  function showPage(pageId) {
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    document.getElementById(pageId).classList.add("active");
+  }
+
+  // PWA service worker
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+  }
+</script>
+
+</body>
+</html>
